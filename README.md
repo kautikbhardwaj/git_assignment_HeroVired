@@ -1,4 +1,3 @@
-
 # Git Assignment - HeroVired
 
 ## Project: CalculatorPlus
@@ -9,7 +8,7 @@ This repository demonstrates Git workflows including branching, pull requests, G
 
 # Q1: Calculator Application
 
-A Python calculator application supporting:
+A Python calculator application supporting the following operations:
 
 - Addition
 - Subtraction
@@ -17,20 +16,25 @@ A Python calculator application supporting:
 - Division
 - Square Root
 
-## Square Root Feature
-Implemented using Python's math library.
+### Square Root Feature
+Implemented using Python's `math` library.
 
+### Bug Fix
 
-## Bug Fix
+The divide function was updated to prevent division by zero.
 
-Division function updated to prevent division by zero.
+Example:
 
+def divide(self, a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero.")
+    return a / b
 
 ---
 
-# Branch Workflow
+# Git Branch Workflow
 
-Branches created:
+Branches used in this project:
 
 - main
 - dev
@@ -40,44 +44,66 @@ Branches created:
 - feature/circle-area
 - feature/rectangle-area
 
+Development workflow followed:
+
+1. Code added to **dev branch**
+2. Feature developed in **feature/sqrt branch**
+3. Pull request created
+4. Feature merged into **dev**
+5. Final code merged into **main**
+
 ---
 
 # Release Versions
 
 Version tags created:
 
-- v1.0
-- v2.0
+- v1.0 – Initial Calculator Release
+- v2.0 – Added Square Root Feature and Bug Fix
 
 ---
 
-# Q2: Git LFS
+# Q2: Git LFS (Large File Storage)
 
-Git Large File Storage was used to manage large binary files.
+Git LFS was used to manage large binary files.
 
-Steps:
+Steps followed:
 
 1. Install Git LFS
-2. Track zip files
+
+git lfs install
+
+2. Track ZIP files
+
+git lfs track "*.zip"
+
 3. Add large file (>200MB)
-4. Commit and push using LFS
 
+git add largefile.zip
 
+4. Commit and push
+
+git commit -m "Added large file using Git LFS"
+git push origin lfs
 
 ---
 
 # Q3: Git Stash Workflow
 
-Git stash was used to switch between features without committing incomplete work.
+Git stash was used to temporarily save incomplete changes while switching branches.
 
 Example commands used:
 
+git stash
+git stash pop
 
+Workflow followed:
 
-This allowed switching between:
-
-- circle area feature
-- rectangle area feature
+1. Started working on **circle area feature**
+2. Stashed incomplete work
+3. Switched to **rectangle area feature**
+4. Retrieved stashed changes
+5. Completed features and committed changes
 
 ---
 
